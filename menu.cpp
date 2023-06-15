@@ -52,7 +52,7 @@ void readVraboteniData() {
 
     if (in.fail()) {
         cout << "Failed to read vraboteni!" << endl;
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     cout << "Vraboteni loaded and read from file!" << endl;
 
@@ -203,7 +203,7 @@ void findVraboten() {
     cin.ignore();
 
     cout << " Enter #ID/Name to Find ->" << endl;
-    cin.getline(entryToFind, ID_LIMIT);
+    cin.getline(entryToFind, NAME_LIMIT);
 
     vector<Vraboten> :: iterator itr;
     itr = find(vraboteni.begin(), vraboteni.end(), *new Vraboten(entryToFind, entryToFind, Position::WORKER, 0, 0));
