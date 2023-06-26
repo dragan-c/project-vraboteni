@@ -3,7 +3,6 @@
 #include <windows.h>
 #include <vector>
 #include <stdlib.h>
-#include <exception>
 #include <algorithm>
 #include <iomanip>
 
@@ -217,28 +216,13 @@ void findVraboten() {
 }
 
 void printVraboten(Vraboten &vraboten) {
-    cout << "#" << vraboten.getID()
+    cout << '#' << vraboten.getID()
         << setw(8) << vraboten.getName()
         << setw(8) << getFriendlyPositionName(vraboten.getPosition())
         << setw(8) << vraboten.getHoursWorked() << 'h'
         << setw(8) << '$' << vraboten.getWage() << "/h"
         << setw(8) << '$' << setprecision(2) << fixed << vraboten.getCalculatedWage() << endl;
 }
-
-/*
-void printVraboten(Vraboten &vraboten) {
-    cout << endl;
-    cout << "Info" << endl;
-    cout << "------------------" << endl;
-    cout << " ID  ->  #" << vraboten.getID() << endl;
-    cout << " Name  ->  " << vraboten.getName() << endl;
-    cout << " Position  ->  " << getFriendlyPositionName(vraboten.getPosition()) << endl;
-    cout << " Hours Worked  ->  " << vraboten.getHoursWorked() << endl;
-    cout << " Hourly Wage  ->  " << vraboten.getWage() << endl;
-    cout << "------------------" << endl;
-    cout << vraboten;
-}
-*/
 
 void printVraboteniList() {
     vector<Vraboten> :: iterator itr;
@@ -250,7 +234,6 @@ void printVraboteniList() {
     }
 
     for (itr = vraboteni.begin(); itr != vraboteni.end(); itr++) {
-        //cout << (*itr) << endl;
         printVraboten(*itr);
     }
 }

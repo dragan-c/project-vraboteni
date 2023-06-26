@@ -43,7 +43,6 @@ public:
     friend ostream & operator <<(ostream &, Vraboten &);
 
     ~Vraboten() {
-        //cout << endl << "Destroyed '" << name << '\'' << endl;
     }
 };
 
